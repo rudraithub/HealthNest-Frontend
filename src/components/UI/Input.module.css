@@ -1,0 +1,22 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0 5px 0;
+}
+
+.inputContainer label {
+    font-family: Heebo;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    text-align: left;
+    padding-bottom: 7px;
+}
+
+.input {
+    border-radius: 13.56px;
+    border: 0.9px solid black;
+    margin-bottom: 5px;
+    padding: 14.47px 21.7px;
+    gap: 9.04px;
+}
