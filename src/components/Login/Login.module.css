@@ -42,8 +42,8 @@
     padding: 29.63px;
 }
 
-.formTitle {
-    width: 68px;
+.formContainer .formTitle {
+    width: 25%;
     /* height: 22px; */
     font-family: Heebo;
     font-size: 18px;
@@ -73,7 +73,7 @@
     padding-top: 3px;
     font-family: Heebo !important;
     font-size: 13px !important;
-    font-weight: revert-layer !important;
+    font-weight: 500 !important;
     line-height: 26.56px !important;
     text-align: left !important;
 }
@@ -207,7 +207,7 @@
         justify-content: center;
     }
 
-    .textContainer p{
+    .textContainer p {
         letter-spacing: 0.5px;
         width: 84%;
     }
@@ -217,74 +217,365 @@
         margin: 0;
     }
 
+    .formContainer .formTitle{
+        width: 26%;
+    }
+
     /* .remember {
         position: relative;
         right: 74%;
     } */
 }
 
+@media (max-width: 1280px) {
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 4%;
+    }
+
+    .textContainer h1 {
+        font-size: 48px;
+        line-height: 57.6px;
+        letter-spacing: 0.5px;
+    }
+
+    .textContainer p {
+        font-size: 15px;
+    }
+
+    .formContainer {
+        width: 38%;
+    }
+
+    .formContainer .formTitle {
+        width: 23%;
+    }
+}
+
 @media (max-width: 1024px) {
-    .container{
+    .container {
         width: 100%;
     }
 
-    .textContainer h1{
-        font-size: 42px;
-        line-height: 47px;
+    .textContainer {
+        width: 40%;
     }
+
+    .textContainer h1 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .textContainer p {
+        letter-spacing: 0.4px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+
     /* .remember label{
         position: absolute;
         right: 216px;
     } */
 
+    .formContainer {
+        width: 40%;
+    }
+
+    .formContainer .formTitle {
+        width: 28%;
+        font-size: 16px;
+    }
+
+    .remember{
+        display: flex !important;
+        gap: 4px !important;
+    }
+
+    .remember label {
+        font-size: 12px !important;
+        font-weight: 400 !important;
+        line-height: 15.56px !important;
+    }
+
+    .remember input{
+        width: 18px !important;
+        margin-left: 3px;
+    }
+
+    .pera{
+        font-size: 12px;
+        letter-spacing: 0.3px;
+    }
+
+    #loginbtn{
+        font-size: 17px;
+    }
+
+    .span{
+        font-size: 13px;
+    }
+
+    .span a{
+        font-size: 14px;
+    }
+
+    .hrcont h3{
+        font-size: 16px;
+    }
+
+    .left {
+        position: relative;
+        right: 110px;
+    }
+
+    .right {
+        position: relative;
+        left: 110px;
+    }
+
+    #buttons{
+        padding: 0 80px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 0px 0px 0;
+        gap: 40px;
+        justify-content: start;
+        height: 1250px;
+    }
+
+    .textContainer{
+        width: 83%;
+        position: relative;
+        top: 80px;
+    }
+
+    .textContainer h1 {
+        font-size: 35px;
+        line-height: 44px;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+    }
+
+    .textContainer p{
+        font-size: 24px;
+        line-height: 28px;
+        width: 100%;
+    }
+
+    .formContainer{
+        width: 85%;
+        position: relative;
+        top: 80px;
+        bottom: 20px;
+    }
+
+    .formContainer .formTitle{
+        width: 30%;
+        font-size: 24px;
+        margin: 0 0 30px 0;
+    }
+
+    .remember label{
+        font-size: 18px !important;
+        font-weight: 500 !important;
+    }
+
+    .remember input{
+        width: 22px !important;
+        height: 22px;
+        margin-left: 3px;
+    }
+
+    .pera{
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        line-height: 21px;
+    }
+
+    #loginbtn{
+        font-size: 25px;
+        margin: 10px 0 20px 0;
+    }
+
+    #loginbtn span svg{
+        font-size: 22px;
+    }
+
+    .span{
+        font-size: 18px;
+    }
+
+    .span a{
+        font-size: 20px;
+    }
+
+    .hrcont{
+        width: 100%;
+        margin: 10px 0 24px 0;
+    }
+
+    .hrcont h3{
+        font-size: 20px;
+    }
+
     .left{
         position: relative;
-        right: 100px;
+        right: 178px;
     }
 
     .right{
         position: relative;
-        left: 110px;
+        left: 175px;
+    }
+
+    #buttons{
+        padding: 0 154px;
+        font-size: 20px;
+    }
+
+    .button{
+        font-size: 20px;
+    }
+
+    .google img{
+        height: 31px;
+        width: 31px;
     }
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 0 60px;
+    .textContainer{
+        width: 76%;
+        position: relative;
+        top: 50px;
     }
 
-    .text-container h1 {
-        font-size: 28px;
-        line-height: 35px;
-
+    .textContainer h1 {
+        font-size: 31px;
+        line-height: 40px;
     }
 
-    .input-container {
-        padding: 20px;
-        margin: 0;
+    .textContainer p{
+        font-size: 19px;
+        line-height: 25px;
+        width: 100%;
+        margin: 0 0 44px 0;
     }
 
-    .button {
-        padding: 10px 14px;
+    .formContainer{
+        width: 82%;
+        position: relative;
+        top: 20px;
+        bottom: 20px;
+    }
+
+    .hrcont{
+        width: 100%;
+        margin: 10px 0 24px 0;
+    }
+
+    .hrcont h3{
+        font-size: 20px;
+    }
+
+    .left{
+        position: relative;
+        right: 154px;
+    }
+
+    .right{
+        position: relative;
+        left: 145px;
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width:320px) and (max-width: 480px) {
     .container {
-        padding: 0 20px;
+        width: 100%;
+        height: 1080px;
     }
 
-    .text-container h1 {
-        font-size: 28px;
-        line-height: 2rem;
+    .textContainer{
+        width: 82%;
     }
 
-    .input-container {
-        padding: 15px;
-        margin-bottom: 10px;
+    .textContainer h1 {
+        font-size: 20px;
+        line-height: 1.5rem;
     }
 
-    .button {
-        padding: 8px 12px;
+    .textContainer p{
+        font-size: 15px;
+        line-height: 1.2rem;
+    }
+
+    .formContainer{
+        width: 82%;
+    }
+
+    .formContainer .formTitle{
+        width: 48%;
+        font-size: 18px;
+    }
+
+    .remember label{
+        font-size: 14px !important;
+        font-weight: 400 !important;
+    }
+
+    .remember input{
+        width: 19px !important;
+    }
+
+    .pera{
+        width: 100%;
+        font-size: 13px;
+    }
+
+    #loginbtn{
+        font-size: 19px;
+        margin: 0px 0 10px 0;
+    }
+
+    #loginbtn span svg{
+        font-size: 17px;
+    }
+
+    .span{
+        font-size: 13px;
+    }
+
+    .span a{
+        font-size: 14px;
+    }
+
+    .divider{
+        width: 35%;
+    }
+
+    .left{
+        position: relative;
+        right: 81px;
+    }
+
+    .right{
+        position: relative;
+        left: 80px;
+    }
+
+    #buttons {
+        padding: 0px 2px;
+    }
+
+    .button{
+        padding: 14px 14px;
+        font-size: 16px;
     }
 }

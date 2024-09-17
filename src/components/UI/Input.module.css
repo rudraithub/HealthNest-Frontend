@@ -18,5 +18,53 @@
     border: 0.9px solid black;
     margin-bottom: 5px;
     padding: 14.47px 21.7px;
-    gap: 9.04px;
+}
+
+.input::placeholder{
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 1024px) {
+    .inputContainer label{
+        font-size: 17px;
+    }
+
+    .input{
+        padding: 14.47px 16.7px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0 12px 0;
+        gap: 5px;
+    }
+
+    .inputContainer label{
+        font-size: 25px;
+    }
+
+    .input{
+        padding: 23.47px 16.7px;
+        font-size: 22px;
+    }
+}
+
+@media (min-width:320px) and (max-width: 480px) {
+    .inputContainer{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0 10px 0;
+        gap: 0px;
+    }
+    .inputContainer label{
+        font-size: 18px;
+    }
+
+    .input{
+        padding: 8px 15px;
+        font-size: 15px;
+    }
 }
