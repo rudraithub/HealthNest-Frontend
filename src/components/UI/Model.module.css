@@ -1,0 +1,38 @@
+.modal {
+    background-color: #e4ddd4;
+    margin-top: 2px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    padding: 17px 0 0 1%;
+    width: 100%;
+    /* max-width: 40rem; */
+    position: relative;
+    /* top: -93%; */
+    left: 50%;
+    transform: translateX(-50%);
+    animation: __fade-slide-up_1in3h_1_1f5wj_1 0.3s ease-out forwards;
+}
+
+.model_close_btn{
+    position: absolute;
+    top: 10px;
+    left: 97%;
+
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+@keyframes fade-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

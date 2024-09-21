@@ -29,7 +29,7 @@ function NavBar() {
                         <li className={styles.nav_list}><NavLink to={'#'} >About</NavLink></li>
                         <li className={styles.nav_list}><NavLink to={'#'} >Doctors</NavLink></li>
                         <li className={styles.nav_list}><NavLink to={'#'} >Services <span className={styles.caret_icon}><RxCaretDown className={styles.caret} /></span></NavLink></li>
-                        <li className={styles.nav_list}><NavLink to={'#'} >Register <span className={styles.register_icon}><MdKeyboardDoubleArrowRight /></span></NavLink></li>
+                        <li className={styles.nav_list}><NavLink className={({ isActive }) => isActive ? styles.active : ''} to={'/register'} >Register <span className={styles.register_icon}><MdKeyboardDoubleArrowRight /></span></NavLink></li>
                     </ul>
                     <NavLink className={({isActive}) => isActive ? styles.activeLogin : styles.login_btn} to={'/login'}>Log In</NavLink>
                 </nav>

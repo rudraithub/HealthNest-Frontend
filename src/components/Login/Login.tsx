@@ -1,11 +1,86 @@
 import styles from "./Login.module.css";
 import google from "../../assets/image.png";
-import Input from "../UI/Input";
 import { LuArrowRight } from "react-icons/lu";
+import { Link, useNavigate } from "react-router-dom";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { FormEvent, useEffect, useState } from "react";
+import useApi from "../../Hooks/useApi";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { UiACtion } from "../../store/uiSlice";
+import Modal from "../UI/Model";
+import Error from "../error/Error";
+import Success from "../error/Success";
+import { storeToken } from "../../utils/storage";
 
 export default function Login() {
+    const [mobileNumber, setMobileNumber] = useState<string>('')
+    const [error, setError] = useState<string>('')
+    const { sendRequest, resData, loading, clearData } = useApi({
+        endpoint: '/login/sent/otp',
+        method: 'POST',
+    }, {})
+
+    const navigate = useNavigate()
+
+    const dispatch = useDispatch()
+
+    const { errorMessage, successMessage, isModalOpen } = useSelector((state: RootState) => state.ui)
+
+    const handlePhoneChange = (value: string) => {
+        setMobileNumber(`+${value}`)
+    }
+    function handleSubmit(event: FormEvent<HTMLFormElement>): void {
+        event.preventDefault();
+        if (mobileNumber.length === 0) {
+            setError('Please Provide Your Mobile Number!')
+            return
+        }
+        sendRequest({ mobileNumber: mobileNumber })
+    }
+
+    useEffect(() => {
+        if (resData) {
+            // console.log(resData)
+            if (resData.otpToken) {
+                storeToken('otpToken', resData.otpToken)
+            }
+            dispatch(UiACtion.showSuccess(resData.message));
+        }
+    }, [resData, dispatch]);
+
+    useEffect(() => {
+        if (errorMessage) {
+            dispatch(UiACtion.showError(errorMessage));
+        }
+    }, [errorMessage, dispatch]);
+
+    const closeModal = () => {
+        setMobileNumber('')
+        // setFormattedAddress('');
+        dispatch(UiACtion.closeModal());
+        clearData() 
+    };
+
+    useEffect(()=>{
+        if(successMessage){
+            navigate('/login/login-verify-otp')
+        }
+    }, [navigate, successMessage])
+
     return (
         <div className={styles.container}>
+            {isModalOpen && errorMessage && (
+                <Modal open={isModalOpen} onClose={closeModal}>
+                    <Error message={errorMessage} />
+                </Modal>
+            )}
+            {isModalOpen && successMessage && (
+                <Modal open={isModalOpen} onClose={closeModal}>
+                    <Success message={successMessage} />
+                </Modal>
+            )}
             <div className={styles.textContainer}>
                 <h1>
                     Empowering you to take control of your health and
@@ -18,16 +93,8 @@ export default function Login() {
             </div>
             <div className={styles.formContainer}>
                 <h2 className={styles.formTitle}>LOG IN</h2>
-                <form className={styles.form} action="">
-                    <Input
-                        label="Name"
-                        name="name"
-                        id="name"
-                        type="text"
-                        placeholder="Name"
-                        required
-                    />
-                    <Input
+                <form className={styles.form} onSubmit={handleSubmit}>
+                    {/* <Input
                         label="Phone Number"
                         name="phone"
                         id="phone"
@@ -35,38 +102,35 @@ export default function Login() {
                         maxLength={10}
                         placeholder="Phone Number"
                         required
-                    />
-                    <Input
-                        label="Address"
-                        name="address"
-                        id="address"
-                        type="text"
-                        placeholder="Address"
-                        required
-                    />
-                    {/* <div id={`${styles.remember}`}>
-                        <input name="remember" id="remember" type="checkbox" />
-                        <label htmlFor="remember">Remember me</label>
-                    </div> */}
-                    <Input
-                        name="remember"
-                        type="checkbox"
-                        id="remember"
-                        label="Remember me"
-                        className={styles.remember}
-                    />
-                    <p className={styles.pera}>
-                        <a href="/">
-                            Forgot Password?Retrieve <br />Forgotten Username!
-                        </a>
-                    </p>
+                    /> */}
+
+                    <div className={styles.inputWrapper}>
+                        <label htmlFor="mobileNumber" className={styles.label}>Mobile Number</label>
+                        <PhoneInput
+                            country={'in'} // Default country
+                            value={mobileNumber}
+                            onChange={handlePhoneChange}
+                            onlyCountries={['us', 'gb', 'in']}
+                            inputProps={{
+                                name: 'mobileNumber',
+                                required: true,
+                                id: 'mobileNumber',
+                            }}
+                            containerClass={styles.phoneInputContainer}
+                            inputClass={styles.phoneInputField}
+                            buttonClass={styles.phoneInputButton}
+                            dropdownClass={styles.phoneDropdown} // Add a class for the dropdown
+                        // enableSearch={true}
+                        />
+                        {error && <p className={styles.error}>{error}</p>}
+                    </div>
+
                     <button id={styles.loginbtn} type="submit">
-                        Log In
+                        {loading ? 'sending...' : 'Login'}
                         <span className={styles.arrowIcon}><LuArrowRight fontSize={'16px'} /></span>
-                        {/* Icon/Outline/arrow-right */}
                     </button>
                     <span className={styles.span}>
-                        Don’t have an account? <a href="/"> Sign up</a>
+                        Don’t have an account? <Link to="/register"> Sign up</Link>
                     </span>
                 </form>
                 <div className={styles.hrcont}>
