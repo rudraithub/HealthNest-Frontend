@@ -24,6 +24,10 @@
     letter-spacing: 0.3px;
 }
 
+.input:disabled{
+    background-color: white;
+}
+
 @media (max-width: 1024px) {
     .inputContainer label{
         font-size: 17px;
@@ -43,12 +47,13 @@
     }
 
     .inputContainer label{
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .input{
-        padding: 23.47px 16.7px;
-        font-size: 22px;
+        padding: 11.47px 16.7px;
+        font-size: 18px;
+
     }
 }
 

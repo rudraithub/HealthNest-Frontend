@@ -8,7 +8,7 @@
     background: #f5f5f5;
     justify-content: space-around;
     align-items: center;
-    height: 875px;
+    height: 100vh;
 }
 
 .textContainer {
@@ -150,6 +150,7 @@
     top: -11px;
     left: 126px;
 }
+
 .google {
     display: flex;
     align-items: center;
@@ -227,11 +228,6 @@
     outline: 1.4px solid white !important;
 }
 
-.phoneInputField::placeholder {
-    color: #aaa; /* Change this to a color that contrasts with the input background */
-    opacity: 1;  /* Make sure opacity is not set to 0 */
-}
-
 .phoneInputContainer {
     margin: 10px 0;
 }
@@ -260,7 +256,7 @@
         margin: 0;
     }
 
-    .formContainer .formTitle {
+    .formContainer .formTitle{
         width: 26%;
     }
 
@@ -331,7 +327,11 @@
         font-size: 16px;
     }
 
-    .remember {
+    .label {
+        font-size: 17px;
+    }
+
+    .remember{
         display: flex !important;
         gap: 4px !important;
     }
@@ -342,29 +342,29 @@
         line-height: 15.56px !important;
     }
 
-    .remember input {
+    .remember input{
         width: 18px !important;
         margin-left: 3px;
     }
 
-    .pera {
+    .pera{
         font-size: 12px;
         letter-spacing: 0.3px;
     }
 
-    #loginbtn {
+    #loginbtn{
         font-size: 17px;
     }
 
-    .span {
+    .span{
         font-size: 13px;
     }
 
-    .span a {
+    .span a{
         font-size: 14px;
     }
 
-    .hrcont h3 {
+    .hrcont h3{
         font-size: 16px;
     }
 
@@ -378,7 +378,7 @@
         left: 110px;
     }
 
-    #buttons {
+    #buttons{
         padding: 0 80px;
     }
 
@@ -420,7 +420,7 @@
         height: 1250px;
     }
 
-    .textContainer {
+    .textContainer{
         width: 83%;
         position: relative;
         top: 80px;
@@ -433,94 +433,98 @@
         margin: 0 0 10px 0;
     }
 
-    .textContainer p {
+    .textContainer p{
         font-size: 24px;
         line-height: 28px;
         width: 100%;
     }
 
-    .formContainer {
+    .formContainer{
         width: 85%;
         position: relative;
         top: 80px;
         bottom: 20px;
     }
 
-    .formContainer .formTitle {
+    .formContainer .formTitle{
         width: 30%;
         font-size: 24px;
         margin: 0 0 30px 0;
     }
 
-    .remember label {
+    .label {
+        font-size: 25px;
+    }
+
+    .remember label{
         font-size: 18px !important;
         font-weight: 500 !important;
     }
 
-    .remember input {
+    .remember input{
         width: 22px !important;
         height: 22px;
         margin-left: 3px;
     }
 
-    .pera {
+    .pera{
         font-size: 18px;
         letter-spacing: 0.5px;
         line-height: 21px;
     }
 
-    #loginbtn {
+    #loginbtn{
         font-size: 25px;
         margin: 10px 0 20px 0;
     }
 
-    #loginbtn span svg {
+    #loginbtn span svg{
         font-size: 22px;
     }
 
-    .span {
+    .span{
         font-size: 18px;
     }
 
-    .span a {
+    .span a{
         font-size: 20px;
     }
 
-    .hrcont {
+    .hrcont{
         width: 100%;
         margin: 10px 0 24px 0;
     }
 
-    .hrcont h3 {
+    .hrcont h3{
         font-size: 20px;
     }
 
-    .left {
+    .left{
         position: relative;
         right: 178px;
     }
 
-    .right {
+    .right{
         position: relative;
         left: 175px;
     }
 
-    #buttons {
+    #buttons{
         padding: 0 154px;
         font-size: 20px;
     }
 
-    .button {
+    .button{
         font-size: 20px;
     }
 
-    .google img {
+    .google img{
         height: 31px;
         width: 31px;
     }
 
     .label {
-        font-size: 25px;
+        font-size: 20px;
     }
     
     /* Style for the input container */
@@ -547,12 +551,12 @@
     }
     
     .phoneInputContainer {
-        margin: 10px 0;
+        margin: 0px 0 4px 0;
     }
 }
 
 @media (max-width: 768px) {
-    .textContainer {
+    .textContainer{
         width: 76%;
         position: relative;
         top: 50px;
@@ -563,36 +567,37 @@
         line-height: 40px;
     }
 
-    .textContainer p {
+    .textContainer p{
         font-size: 19px;
         line-height: 25px;
         width: 100%;
         margin: 0 0 44px 0;
     }
 
-    .formContainer {
+    .formContainer{
         width: 82%;
         position: relative;
         top: 20px;
         bottom: 20px;
     }
 
-    .hrcont {
+    .hrcont{
         width: 100%;
         margin: 10px 0 24px 0;
     }
 
-    .hrcont h3 {
+    .hrcont h3{
         font-size: 20px;
     }
 
-    .left {
+    .left{
         position: relative;
         right: 154px;
     }
 
-    .right {
+    .right{
         position: relative;
+        top: -18px;
         left: 145px;
     }
 }
@@ -600,10 +605,10 @@
 @media (min-width:320px) and (max-width: 480px) {
     .container {
         width: 100%;
-        height: 1080px;
+        /* height: 1080px; */
     }
 
-    .textContainer {
+    .textContainer{
         width: 82%;
     }
 
@@ -612,70 +617,76 @@
         line-height: 1.5rem;
     }
 
-    .textContainer p {
+    .textContainer p{
         font-size: 15px;
         line-height: 1.2rem;
     }
 
-    .formContainer {
+    .formContainer{
         width: 82%;
     }
 
-    .formContainer .formTitle {
+    .formContainer .formTitle{
         width: 48%;
         font-size: 18px;
     }
 
-    .remember label {
+    .label {
+        font-size: 18px;
+    }
+
+    .remember label{
         font-size: 14px !important;
         font-weight: 400 !important;
     }
 
-    .remember input {
+    .remember input{
         width: 19px !important;
     }
 
-    .pera {
+    .pera{
         width: 100%;
         font-size: 13px;
     }
 
-    #loginbtn {
+    #loginbtn{
         font-size: 19px;
         margin: 0px 0 10px 0;
     }
 
-    #loginbtn span svg {
+    #loginbtn span svg{
         font-size: 17px;
     }
 
-    .span {
+    .span{
         font-size: 13px;
     }
 
-    .span a {
+    .span a{
         font-size: 14px;
     }
 
-    .divider {
+    .divider{
         width: 35%;
     }
 
-    .left {
+    .left{
         position: relative;
         right: 81px;
     }
 
-    .right {
+    .right{
         position: relative;
+        top: -19px;
         left: 80px;
     }
+    
 
     #buttons {
         padding: 0px 2px;
     }
 
-    .button {
+    .button{
         padding: 14px 14px;
         font-size: 16px;
     }
@@ -693,7 +704,7 @@
     }
     
     .phoneInputField {
-        padding: 8px 15px !important;
+        padding: 8px 51px !important;
         font-size: 15px !important;
     }
     

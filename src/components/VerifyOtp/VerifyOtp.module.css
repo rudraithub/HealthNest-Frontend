@@ -8,7 +8,7 @@
     background: #f5f5f5;
     justify-content: space-around;
     align-items: center;
-    height: 875px;
+    height: 100vh;
 }
 
 .textContainer {
@@ -59,45 +59,33 @@
     margin-bottom: 10px;
 }
 
-.remember {
+.otpTitle {
+    text-align: center;
+    font-size: 22px;
+    margin: 0 0 28px 0;
+}
+
+.inputContainer{
     display: flex;
-    flex-direction: row-reverse !important;
-    flex-wrap: wrap !important;
-    text-align: left;
-    align-items: center !important;
-    gap: 1px;
-    justify-content: flex-end;
+    margin: 0px 0 28px 0;
+    gap: 20px;
+    justify-content: center;
 }
 
-.remember label {
-    padding-top: 3px;
-    font-family: Heebo !important;
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    line-height: 26.56px !important;
-    text-align: left !important;
+.input{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.remember input {
-    background: transparent;
-    width: 25.75px;
-    height: 18.75px;
-}
-
-.pera {
-    width: 55%;
-    font-family: Heebo;
-    font-size: 13px;
-    /* font-weight: 400; */
-    line-height: 20.56px;
-    text-align: left;
-    margin: 5px 0 10px 0;
-
-}
-
-.pera a {
-    text-decoration: none;
-    color: #0029FF;
+.input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 #loginbtn {
@@ -111,136 +99,6 @@
     border: none;
     letter-spacing: 0.2px;
     outline: none;
-}
-
-.arrowIcon {
-    position: absolute;
-    margin: 2px 0 0px 10px;
-}
-
-.hrcont {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 16px 0;
-}
-
-.hrcont h3 {
-    position: relative;
-    /* top: 2px; */
-    color: #666666cf;
-}
-
-.divider {
-    width: 38%;
-    border: 1px solid #abaaaa;
-}
-
-.left {
-    position: relative;
-    top: 13px;
-    right: 126px;
-
-}
-
-.right {
-    position: relative;
-    top: -11px;
-    left: 126px;
-}
-.google {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.google img {
-    height: 20px;
-    width: 20px;
-}
-
-#buttons {
-    display: flex;
-    padding: 0 85px 0 85px;
-    flex-direction: column;
-}
-
-.button {
-    padding: 12px 16px;
-    border-radius: 6px;
-    border: 1px solid black;
-    font-family: Heebo;
-    font-size: 14px;
-    font-weight: 500;
-    column-gap: 10px
-}
-
-.span {
-    display: flex;
-    justify-content: center;
-    font-family: Heebo;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 20.56px;
-    letter-spacing: 0.2px;
-    gap: 2px;
-}
-
-.span a {
-    color: #008080;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.span a:hover {
-    text-decoration: underline;
-}
-
-/* General styles for the label */
-.label {
-    font-family: Heebo;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 25px;
-    text-align: left;
-    padding-bottom: 7px;
-}
-
-/* Style for the input container */
-.inputWrapper {
-    margin-bottom: 15px;
-}
-
-.phoneInputField {
-    width: 100% !important;
-    padding: 22px 0 22px 60px !important;
-    border: 1px solid #000000 !important;
-    border-radius: 14px !important;
-    font-size: 13px !important;
-}
-
-.phoneInputField:focus {
-    border: 2px solid #000000 !important;
-    outline: 1.4px solid white !important;
-}
-
-.phoneInputField::placeholder {
-    color: #aaa; /* Change this to a color that contrasts with the input background */
-    opacity: 1;  /* Make sure opacity is not set to 0 */
-}
-
-.phoneInputContainer {
-    margin: 10px 0;
-}
-
-.phoneInputButton {
-    background-color: transparent !important;
-    border: none !important;
-    padding: 5px 5px !important;
-    border-right: 1px solid black !important;
 }
 
 @media (max-width: 1440px) {
@@ -381,33 +239,6 @@
     #buttons {
         padding: 0 80px;
     }
-
-    .label {
-        font-size: 17px;
-    }
-    
-    /* Style for the input container */
-    .inputWrapper {
-        margin-bottom: 15px;
-    }
-    
-    .phoneInputField {
-        padding: 14.47px 16.7px !important;
-    }
-    
-    .phoneInputField:focus {
-        border: 2px solid #000000 !important;
-        outline: 1.4px solid white !important;
-    }
-    
-    .phoneInputField::placeholder {
-        color: #aaa; /* Change this to a color that contrasts with the input background */
-        opacity: 1;  /* Make sure opacity is not set to 0 */
-    }
-    
-    .phoneInputContainer {
-        margin: 10px 0;
-    }
 }
 
 @media (max-width: 900px) {
@@ -417,7 +248,7 @@
         padding: 0px 0px 0px 0;
         gap: 40px;
         justify-content: start;
-        height: 1250px;
+        /* height: 1250px; */
     }
 
     .textContainer {
@@ -518,37 +349,6 @@
         height: 31px;
         width: 31px;
     }
-
-    .label {
-        font-size: 25px;
-    }
-    
-    /* Style for the input container */
-    .inputWrapper {
-        display: flex;
-        flex-direction: column;
-        margin: 0px 0 12px 0;
-        gap: 5px;
-    }
-    
-    .phoneInputField {
-        padding: 23.47px 16.7px !important;
-        font-size: 22px !important;
-    }
-    
-    .phoneInputField:focus {
-        border: 2px solid #000000 !important;
-        outline: 1.4px solid white !important;
-    }
-    
-    .phoneInputField::placeholder {
-        color: #aaa; /* Change this to a color that contrasts with the input background */
-        opacity: 1;  /* Make sure opacity is not set to 0 */
-    }
-    
-    .phoneInputContainer {
-        margin: 10px 0;
-    }
 }
 
 @media (max-width: 768px) {
@@ -600,7 +400,7 @@
 @media (min-width:320px) and (max-width: 480px) {
     .container {
         width: 100%;
-        height: 1080px;
+        /* height: 1080px; */
     }
 
     .textContainer {
@@ -678,36 +478,5 @@
     .button {
         padding: 14px 14px;
         font-size: 16px;
-    }
-
-    .label {
-        font-size: 18px;
-    }
-    
-    /* Style for the input container */
-    .inputWrapper {
-        display: flex;
-        flex-direction: column;
-        margin: 0px 0 10px 0;
-        gap: 0px;
-    }
-    
-    .phoneInputField {
-        padding: 8px 15px !important;
-        font-size: 15px !important;
-    }
-    
-    .phoneInputField:focus {
-        border: 2px solid #000000 !important;
-        outline: 1.4px solid white !important;
-    }
-    
-    .phoneInputField::placeholder {
-        color: #aaa; /* Change this to a color that contrasts with the input background */
-        opacity: 1;  /* Make sure opacity is not set to 0 */
-    }
-    
-    .phoneInputContainer {
-        margin: 10px 0;
     }
 }
