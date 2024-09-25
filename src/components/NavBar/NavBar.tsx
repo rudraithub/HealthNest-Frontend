@@ -1,41 +1,71 @@
-import { NavLink } from "react-router-dom"
-import LOGO from '../../assets/Full Logo White 1.png'
-import styles from './NavBar.module.css'
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { RxCaretDown } from "react-icons/rx";
-import { FaBars, FaTimes } from 'react-icons/fa';
+import styles from "./Navbar.module.css";
+import { GoDotFill } from "react-icons/go";
+import { FaAngleDown } from "react-icons/fa6";
 import { useState } from "react";
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
 
-function NavBar() {
-    // const navigate = useNavigate()
+export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    const navigate = useNavigate()
     return (
-        <header className={styles.header}>
-            <div className={styles.container}>
-                <div className={styles.header_logo}>
-                    <img src={LOGO} alt="" />
-                    <h3>Healthnest</h3>
-                </div>
-                <button className={`${styles.menu_toggle} ${isMenuOpen ? styles.open : ''}`} onClick={toggleMenu}>
+        <div className={styles.navwrapper}>
+            <div className={styles.Navbar}>
+                <button className={`${styles.menu_toggle}`} onClick={toggleMenu}>
                     {isMenuOpen ? <FaTimes /> : <FaBars />}
                 </button>
-                <nav className={`${styles.nav} ${isMenuOpen ? styles.nav_open : ''}`}>
-                    <ul className={styles.nav_ul}>
-                        <li className={styles.nav_list}><NavLink to={'/'} className={({ isActive }) => isActive ? styles.active : ''}>Home</NavLink></li>
-                        <li className={styles.nav_list}><NavLink to={'#'} >About</NavLink></li>
-                        <li className={styles.nav_list}><NavLink to={'#'} >Doctors</NavLink></li>
-                        <li className={styles.nav_list}><NavLink to={'#'} >Services <span className={styles.caret_icon}><RxCaretDown className={styles.caret} /></span></NavLink></li>
-                        <li className={styles.nav_list}><NavLink className={({ isActive }) => isActive ? styles.active : ''} to={'/register'} >Register <span className={styles.register_icon}><MdKeyboardDoubleArrowRight /></span></NavLink></li>
-                    </ul>
-                    <NavLink className={({isActive}) => isActive ? styles.activeLogin : styles.login_btn} to={'/login'}>Log In</NavLink>
-                </nav>
+                <div className={styles.left_nav}>
+                    <div className={styles.Logo}>
+                        <GoDotFill />
+                        <h2>HealthNest</h2>
+                        <GoDotFill />
+                    </div>
+                    <div className={`${styles.links}`}>
+                        <a href="#">Find Doctors</a>
+                        <a href="#">Video Consult</a>
+                        <a href="#">Surgeries</a>
+                    </div>
+                </div>
+                <div className={styles.right_nav}>
+                    <div className={`${styles.boxes}`}>
+                        <div className={styles.box}>
+                            For Corporates
+                            <FaAngleDown />
+                        </div>
+                        <div className={styles.box}>
+                            For Providers
+                            <FaAngleDown />
+                        </div>
+                        <div className={styles.box}>
+                            Security & Help
+                            <FaAngleDown />
+                        </div>
+                    </div>
+                    <div className={styles.login}>
+                        <button onClick={()=> navigate('/login')}>Login/Signup</button>
+                    </div>
+                </div>
+                <div className={`${styles.navMenu} ${isMenuOpen ? `${styles.openNav}` : ''}`}>
+                    <a href="#">Find Doctors</a>
+                    <a href="#">Video Consult</a>
+                    <a href="#">Surgeries</a>
+                    <div>
+                        <a href="#">For Corporates <FaAngleDown /></a> 
+                    </div>
+                    <div>
+                    <a href="#">For Providers <FaAngleDown /></a>
+                        
+                    </div>
+                    <div>
+                        <a href="#">Security & Help <FaAngleDown /></a>   
+                    </div>
+                </div>
             </div>
-        </header>
-    )
+        </div>
+    );
 }
-
-export default NavBar

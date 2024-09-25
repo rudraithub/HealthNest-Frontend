@@ -1,0 +1,67 @@
+.Search_box {
+    width: 100%;
+    display: flex;
+}
+
+.location {
+    width: 40%;
+}
+
+.doctor {
+    width: 60%;
+}
+
+.search_input {
+    font-size: 14px !important;
+    outline: none;
+    font-size: inherit;
+    line-height: 1.4;
+    padding: 6px 20px 6px 30px;
+    /* Adjusted padding-left for icon */
+    color: inherit;
+    border-radius: 2px;
+    border: 1px solid #b4b4be;
+    cursor: pointer;
+    background: #fff;
+    position: relative;
+    height: 100%;
+    width: calc(100% - 50px);
+}
+
+.search_input::placeholder {
+    font-weight: 400;
+}
+
+.input_wrapper {
+    position: relative;
+    display: flex;
+    /* Added flexbox */
+    align-items: center;
+    /* Centers the icon vertically */
+}
+
+.icon {
+    position: absolute;
+    left: 10px;
+    /* Position the icon inside the input */
+    color: #000000;
+    font-size: 1rem;
+    pointer-events: none;
+    /* Ensures the icon doesn’t block input field clicks */
+    z-index: 1;
+    font-weight: 100;
+}
+
+@media (max-width: 768px) {
+    .Search_box {
+        flex-direction: column;
+    }
+
+    .location {
+        width: 100%;
+    }
+
+    .doctor {
+        width: 100%;
+    }
+}
