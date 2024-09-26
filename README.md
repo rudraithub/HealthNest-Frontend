@@ -1,50 +1,96 @@
-# React + TypeScript + Vite
+### HealthNest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### For MAC
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To install and run the HealthNest Node.js project from scratch on a Mac, here’s a step-by-step guide:
 
-## Expanding the ESLint configuration
+### 1. **Install Git:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+If Git is not installed, you can install it using Homebrew or by downloading it directly.
 
-- Configure the top-level `parserOptions` property like this:
+- Install Git via Homebrew:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+   ```bash
+   brew install git
+   ```
+
+- Or, download it from [git-scm.com](https://git-scm.com/).
+
+To verify Git is installed, run:
+
+```bash
+git --version
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. **Open a Terminal:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+You can open the terminal on your Mac using `Cmd + Space`, type `Terminal`, and hit enter.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 3. **Navigate to the Directory Where You Want to Clone the Repository:**
+
+Use the `cd` command to go to the directory where you want to clone the project:
+
+```bash
+cd /path/to/your/directory
 ```
+
+For example, to move to the Documents folder:
+
+```bash
+cd ~/Documents
+```
+
+### 4. **Clone the Repository:**
+
+Run the following Git command to clone the repository. Replace `<repository_url>` with the actual URL of the GitHub repository:
+
+```bash
+git clone <repository_url>
+```
+
+### 5. **Navigate into the Cloned Directory:**
+
+After cloning, move into the cloned directory:
+
+```bash
+cd /path/to/your/cloned/project
+```
+
+For example, if the project folder is named `HealthNest`:
+
+```bash
+cd HealthNest
+```
+## 6. Install Node.js:
+Make sure you have Node.js installed. You can install it using Homebrew:
+
+bash
+Copy code
+brew install node
+To verify that Node.js and npm (Node Package Manager) are installed, run:
+
+```bash
+Copy code
+node -v
+npm -v
+
+```
+## 7. Install Project Dependencies:
+Inside the cloned project directory, install the necessary dependencies by running:
+
+```
+bash
+Copy code
+npm install
+```
+
+## 8. Start the Development Server:
+After the dependencies are installed, you can start the development server with the following command:
+
+```bash
+Copy code
+npm run dev
+```
+## 9. Open Your Browser:
+Once the server is running, it will typically provide you with a local URL (usually http://localhost:3000 or http://localhost:5173). Open your web browser and go to that URL to view your React Vite application.
