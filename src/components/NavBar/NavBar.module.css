@@ -111,4 +111,8 @@
         left: 0;
         /* top: 10%; */
     }
+
+    .openNav a{
+        color: #1a1a1a;
+    }
 }
