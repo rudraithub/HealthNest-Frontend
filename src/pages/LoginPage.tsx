@@ -1,11 +1,9 @@
 import React from 'react'
 import Login from '../components/Login/Login'
 
-function LoginPage() {
+const LoginPage = () => {
   return (
-    <>
     <Login />
-    </>
   )
 }
 

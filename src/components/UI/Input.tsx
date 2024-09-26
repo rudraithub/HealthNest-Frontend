@@ -17,31 +17,26 @@ interface propTypes {
     min?: string,
     max?: string,
     className?: string,
-    required? : boolean,
-    checked? : boolean,
-    disabled?: boolean,
+    required?: boolean
 };
 
-const Input: React.FC<propTypes> = ({label, id, type, placeholder,disabled, maxLength, value, onChange, required, name,checked, className = ''}) => {
+const Input: React.FC<propTypes> = ({ label, id, type, placeholder, maxLength, value, onChange, required, name, className = '' }) => {
     return (
-    <div className={`${styles.inputContainer} ${className}`}>
-        {label && <label htmlFor={id}>{label}</label>}
-        <input
-            name={name}
-            id={id}
-            type={type}
-            placeholder={placeholder}
-            maxLength={maxLength}
-            value={value}
-            onChange={onChange}
-            required={required}
-            className={styles.input}
-            checked={checked}
-            disabled={disabled}
-        />
-    </div>
+        <div className={`${styles.inputContainer} ${className}`}>
+            {label && <label htmlFor={id}>{label}</label>}
+            <input
+                name={name}
+                id={id}
+                type={type}
+                placeholder={placeholder}
+                maxLength={maxLength}
+                value={value}
+                onChange={onChange}
+                required={required}
+                className={styles.input}
+            />
+        </div>
     );
 }
-
 
 export default Input

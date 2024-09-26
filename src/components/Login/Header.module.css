@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border-bottom: 1px solid rgba(216, 216, 216, 0.5);
+    color: black;
+    max-width: 1180px;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.div {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 10px;
+}
+
+.div a {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    border-bottom: 3px solid #14bef0;
+    font-weight: bold;
+}
+
+.active a {
+    color: #14bef0;
+}
