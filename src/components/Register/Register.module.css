@@ -2,7 +2,8 @@
 
 .container {
     display: flex;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    padding: 130px 0;
     justify-content: center;
     align-items: center;
     gap: 50px;
@@ -54,28 +55,32 @@
     font-weight: bold;
     font-size: 18px;
 }
-.header_container p{
+
+.header_container p {
     font-size: 14px;
     display: flex;
     gap: 2px;
 }
 
-.header_container p a{
+.header_container p a {
     text-decoration: none;
     font-size: 14px;
     color: #ed9b2d;
     box-sizing: border-box;
     font-size: 12px;
 }
-.header_container a:hover{
+
+.header_container a:hover {
     text-decoration: underline;
 }
-.form{
+
+.form {
     display: flex;
     flex-direction: column;
     padding: 20px 25px;
     gap: 5px;
 }
+
 .form label {
     display: inline-block;
     font-family: 'Lato';
@@ -88,15 +93,18 @@
     margin-bottom: 0;
 
 }
-.mobile{
+
+.mobile {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
-.mobile input{
+
+.mobile input {
     width: 100%;
 }
-.mobile select{
+
+.mobile select {
     border: solid 1px rgba(216, 216, 216, 0.5);
 }
 
@@ -113,6 +121,7 @@ input[type="tel"] {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 input[type="text"]:hover,
 input[type="tel"]:hover {
     border: 1px solid blue;
@@ -182,7 +191,6 @@ input[type="tel"]:hover {
 @media (max-width: 1200px) {
     .container {
         flex-direction: row;
-        padding: 0 60px;
     }
 
     .text-container {
@@ -199,13 +207,15 @@ input[type="tel"]:hover {
 
 @media (max-width: 900px) {
     .container {
-        padding: 0 120px;
+        width: 50%;
+        padding: 60px 0;
+        margin: 0 auto;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    .text_container{
+    .text_container {
         display: none;
     }
 
@@ -228,7 +238,7 @@ input[type="tel"]:hover {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 60px;
+        width: 60%;
     }
 
     .text-container h1 {
@@ -237,19 +247,20 @@ input[type="tel"]:hover {
 
     }
 
-    .input-container {
-        padding: 20px;
-        margin: 0;
-    }
-
     .button {
         padding: 10px 14px;
     }
 }
 
+@media (max-width: 600px) {
+    .container {
+        width: 70%;
+    }
+}
+
 @media (max-width: 480px) {
     .container {
-        padding: 0 20px;
+        width: 90%;
     }
 
     .text-container h1 {
@@ -257,9 +268,23 @@ input[type="tel"]:hover {
         line-height: 2rem;
     }
 
-    .input-container {
-        padding: 15px;
-        margin-bottom: 10px;
+    .header_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 20px 0;
+    }
+
+    .header_container p{
+        font-size: 14px;
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    }
+
+    .mobile select{
+        font-size: 12px;
     }
 
     .button {

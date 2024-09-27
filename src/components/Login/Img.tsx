@@ -1,11 +1,11 @@
 import React from 'react';
-// import styles from "./Register.module.css"; 
-import styles from "./Login.module.css"; 
+import styles from "./Login.module.css";  
+import logo from '../../assets/Logo (1).png';
 
 export default function Img() {
     return (
             <div className={styles["img_container"]}>
-                <img src="https://accounts.practo.com/static/images/illustration.png" alt="Illustration" />
+                <img src={logo} alt="error" />
             </div>
     );
 }

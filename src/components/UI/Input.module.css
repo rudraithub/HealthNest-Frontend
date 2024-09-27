@@ -42,13 +42,13 @@
         gap: 5px;
     }
 
-    .inputContainer label {
+    /* .inputContainer label {
         font-size: 25px;
-    }
+    } */
 
     .input {
         padding: 23.47px 16.7px;
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 
@@ -61,11 +61,15 @@
     }
 
     .inputContainer label {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .input {
         padding: 8px 15px;
-        font-size: 15px;
+        font-size: 12px;
+    }
+
+    .forget a{
+        width: 0;
     }
 }
