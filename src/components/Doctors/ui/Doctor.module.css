@@ -1,0 +1,97 @@
+.Doctor {
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e8f0;
+}
+
+.left_doctors {
+    display: flex;
+}
+
+.image {
+    height: 140px;
+    width: 140px;
+}
+
+.image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.info {
+    padding: 0 16px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info h3 {
+    color: #199fd9;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.info a,
+.info p {
+    color: #737382;
+}
+
+.info p {
+    margin-bottom: 5px;
+}
+
+.info h4 span {
+    font-weight: 400;
+}
+
+.stories {
+    margin-top: 7px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.likes {
+    width: 55px;
+    border-radius: 4px;
+    background: #00a500;
+    color: #fff;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.stories span {
+    text-decoration: underline;
+}
+
+.buttons {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.buttons button {
+    background-color: #14addb;
+    border: 1px solid #14addb;
+    width: 200px;
+    height: 40px;
+    padding: 4px 0;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 550px) {
+    .Doctor{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-direction: column;
+    }
+}

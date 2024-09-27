@@ -37,6 +37,10 @@
     font-weight: 700;
 }
 
+.links a{
+    color: #1a1a1a;
+}
+
 .right_nav {
     display: flex;
     gap: 20px;

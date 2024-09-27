@@ -1,0 +1,73 @@
+.container {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+  }
+  
+  .locationButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+  }
+  
+  .button:hover {
+    background-color: #2563eb;
+  }
+  
+  .outlineButton {
+    background-color: transparent;
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
+  }
+  
+  .outlineButton:hover {
+    background-color: #eff6ff;
+  }
+  
+  .selected {
+    background-color: #2563eb;
+  }
+  
+  .actionButtons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .actionButtons .button {
+    flex: 1;
+  }
+  
+  .icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
