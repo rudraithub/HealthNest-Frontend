@@ -5,6 +5,7 @@ import RootPage from './pages/RootPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/Register';
 import DoctorsPage from './pages/DoctorsP';
+import AppointmentPage from './pages/AppointmentPage';
 
 const Router = createBrowserRouter([
   {
@@ -13,16 +14,20 @@ const Router = createBrowserRouter([
     children: [{
       index: true,
       element: <HomePage />
-    },{
+    }, {
       path: 'login',
       element: <LoginPage />
-    },{
+    }, {
       path: 'signUp',
       element: <RegisterPage />
-    },{
+    }, {
       path: "doctors",
       element: <DoctorsPage />,
-  },]
+    },{
+      path: 'appointment',
+      element: <AppointmentPage />
+    }
+    ]
   }
 ])
 
