@@ -1,7 +1,20 @@
 import styles from "./Doctor.module.css";
 import { BiSolidLike } from "react-icons/bi";
 
-export default function Doctor({ img, name, department, experience, place, fees, likes, stories }) {
+interface DoctorProps {
+    img: string;
+    name: string;
+    department: string;
+    experience: number;
+    place: string;
+    fees: number;
+    likes: number;
+    stories: number;
+    onBookClick: ()=> void
+}
+
+
+export default function Doctor({ img, name, department, experience, place, fees, likes, stories, onBookClick }: DoctorProps) {
     return (
         <div className={styles.Doctor}>
             <div className={styles.left_doctors}>
@@ -28,7 +41,7 @@ export default function Doctor({ img, name, department, experience, place, fees,
             </div>
             <div className={styles.buttons}>
                 <button>View Profile</button>
-                <button>Book Clinic Visit</button>
+                <button onClick={onBookClick}>Book Clinic Visit</button>
             </div>
         </div>
     );

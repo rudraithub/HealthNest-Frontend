@@ -1,5 +1,4 @@
 import CardSlider from './CardSlider/CardSlider'
-import Footer from '../Footer/Footer'
 import styles from './Home.module.css'
 import Search_box from './Search_box'
 import Home_card from './Home_card'
@@ -14,7 +13,6 @@ import c2img3 from "../../assets/img/top-speciality-sexology.svg";
 import c2img4 from "../../assets/img/coughing.png";
 import c2img5 from "../../assets/img/top-speciality-pediatric.svg";
 import c2img6 from "../../assets/img/12-mental-wellness.png";
-import Navbar from '../NavBar/Navbar'
 
 const imgs = [
     {

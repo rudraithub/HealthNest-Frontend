@@ -28,6 +28,7 @@
 .Logo h2 {
     color: #146073;
     font-weight: 900;
+    cursor: pointer;
 }
 
 .links {

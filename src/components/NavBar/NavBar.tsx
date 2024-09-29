@@ -22,7 +22,7 @@ export default function Navbar() {
                 <div className={styles.left_nav}>
                     <div className={styles.Logo}>
                         <GoDotFill />
-                        <h2>HealthNest</h2>
+                        <h2 onClick={() => navigate('/')}>HealthNest</h2>
                         <GoDotFill />
                     </div>
                     <div className={`${styles.links}`}>
