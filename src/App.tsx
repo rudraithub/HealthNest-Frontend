@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/Register';
 import DoctorsPage from './pages/DoctorsP';
 import AppointmentPage from './pages/AppointmentPage';
+import ProfilePage from './pages/ProfilePage';
 
 const Router = createBrowserRouter([
   {
@@ -26,6 +27,9 @@ const Router = createBrowserRouter([
     },{
       path: 'appointment',
       element: <AppointmentPage />
+    },{
+      path: 'profile',
+      element: <ProfilePage />
     }
     ]
   }

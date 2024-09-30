@@ -7,6 +7,7 @@ import karnavati from "./karnavati-dental-care-ahmedabad-650585170c0c0.png";
 import LocationSelector from "./LocationSelector";
 import TimeSlots from "../TimeSlots/TimeSlots";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const doctor_info = [
     {
@@ -66,6 +67,7 @@ export default function Doctors() {
     // State to track which doctor's TimeSlots are open
     const [openSlots, setOpenSlots] = useState<boolean[]>(Array(doctor_info.length).fill(false));
 
+    const navigate = useNavigate()
     // Toggle the TimeSlots for a specific doctor
     const handleBookClick = (index: number) => {
         setOpenSlots((prev) => {
@@ -76,6 +78,9 @@ export default function Doctors() {
         });
     };
 
+    const handleProfileView = () => {
+        navigate('/profile')
+    }
 
     return (
         <div className={styles.doctors}>
@@ -109,6 +114,7 @@ export default function Doctors() {
                                     fees={doctor.fees}
                                     likes={doctor.likes}
                                     stories={doctor.stories}
+                                    onProfileView={handleProfileView}
                                     onBookClick={() => handleBookClick(index)} // Pass index to handleBookClick
                                 />
                                 {openSlots[index] && (
