@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './Appointment.module.css'; // Create a CSS file for styling
 import doctorImg from '../../assets/thumbnail.jpeg'
 import hospitalImg from '../../assets/dr-hemang-zala-multi-speciality-cosmetic-dental-hospital-ahmedabad-1441969518-55f2b56ebd965.webp'
+import { Link } from 'react-router-dom';
 
 const Appointment = () => {
     const [mobile, setMobile] = useState('');
@@ -44,7 +45,7 @@ const Appointment = () => {
                             </div>
                         </div>
 
-                        <a href="#change">Change Date & Time</a>
+                        <Link to="/doctors">Change Date & Time</Link>
                     </div>
                 </div>
                 <div className={styles["doctor-info"]}>

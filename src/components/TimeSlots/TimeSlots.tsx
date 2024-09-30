@@ -97,7 +97,13 @@ const TimeSlots = () => {
         }
     };
 
+    const handleDateClick = (index: React.SetStateAction<number>) => {
+        setSelectedIndex(index);
+    }
+
     const handelTimeSlots = () => {
+        ///scroll top before navigate
+        window.scrollTo(0, 0);
         navigate('/appointment')
     }
 
@@ -107,7 +113,12 @@ const TimeSlots = () => {
                 <button className={styles.pre} onClick={handlePre}>&#10094;</button>
                 <ul className={styles.dateContainer}>
                     {sliceData.map((item, index) => (
-                        <li key={index}>{item.date}</li>
+                        <li
+                            className={selectedIndex === index ? styles.active : ''}
+                            key={index}
+                            onClick={() => handleDateClick(index)}>
+                            {item.date}
+                        </li>
                     ))}
                 </ul>
                 <div className={styles.slider} style={{ transform: `translateX(${selectedIndex * 100}%)` }}></div>
@@ -138,10 +149,10 @@ const TimeSlots = () => {
                     </div>
                 </div>
                 <div className={styles.time}>
-                <div className={styles.timeText}>
-                <IoMoonOutline />
-                    <p>Night</p>
-                </div>
+                    <div className={styles.timeText}>
+                        <IoMoonOutline />
+                        <p>Night</p>
+                    </div>
                     <div className={styles.timeSlots}>
                         {sliceData[selectedIndex].slots.Night.map((item, index) => (
                             <button key={index} onClick={handelTimeSlots}>{item}</button>

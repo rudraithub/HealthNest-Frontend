@@ -15,7 +15,7 @@ export default function Register() {
                 </div>
                 <div className={styles["input-container"]}>
                     <div className={styles.header_container}>
-                        <h2>Join Practo</h2>
+                        <h2>Join HealthNest</h2>
                         <p>Are you a doctor?<a href="#">Register Here</a></p>
                     </div>
                     <form className={styles.form} action="">
