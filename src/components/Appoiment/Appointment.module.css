@@ -74,7 +74,7 @@
     display: flex;
     /* flex: 1; */
     gap: 20px;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     padding: 10px 10px 30px 10px;
     border-bottom: 1px solid #ececec;
     color: #737382;
@@ -96,8 +96,14 @@
     color: #737382;
 }
 
+.clinic-info h3{
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
 .clinic-info p {
     font-size: 0.9rem;
+    margin-bottom: 5px;
 }
 
 .clinic-info a {
@@ -146,7 +152,7 @@
 }
 
 .submit-btn {
-    background-color: #007bff;
+    background-color: #199fd9;
     color: white;
     padding: 6px;
     border: none;
@@ -161,7 +167,7 @@
 }
 
 .submit-btn:hover {
-    background-color: #0056b3;
+    background-color: #168ec2;
 }
 
 .form p {
