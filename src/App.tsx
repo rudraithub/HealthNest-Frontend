@@ -5,8 +5,10 @@ import RootPage from './pages/RootPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/Register';
 import DoctorsPage from './pages/DoctorsP';
-import AppointmentPage from './pages/AppointmentPage';
 import ProfilePage from './pages/ProfilePage';
+import AppointmentBookPage from './pages/AppointmentPage';
+import AppointmentOtpPage from './pages/AppointmentOtpPage';
+import { AppointmentDetailsPage } from './pages/AppointmentDetailsPage';
 
 const Router = createBrowserRouter([
   {
@@ -26,7 +28,16 @@ const Router = createBrowserRouter([
       element: <DoctorsPage />,
     },{
       path: 'appointment',
-      element: <AppointmentPage />
+      children: [{
+        path: 'book',
+        element: <AppointmentBookPage />
+      },{
+        path: 'otp',
+        element: <AppointmentOtpPage />
+      },{
+        path: 'patientDetails',
+        element: <AppointmentDetailsPage />
+      }],
     },{
       path: 'profile',
       element: <ProfilePage />

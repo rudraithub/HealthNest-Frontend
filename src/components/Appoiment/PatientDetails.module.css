@@ -1,0 +1,214 @@
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.patient-detail-container {
+    width: 35%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.patient-detail-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.patient-detail-container h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.error-input {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+.redText {
+    color: red;
+}
+
+.radio-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin-bottom: 15px;
+}
+
+.radio {
+    display: flex !important;
+    align-items: center;
+    gap: 5px;
+    height: 25px;
+    outline: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0 !important;
+}
+
+.form input:not([type="radio"]):not([type="checkbox"]) {
+    width: calc(100% - 24px);
+}
+
+.form input[type="radio"] {
+    height: 16px;
+    width: 16px;
+}
+
+.noHover:hover {
+    border: 1px solid #ccc !important;
+}
+
+.form label {
+    margin-bottom: 5px;
+    display: block; /* Ensure the label is treated as a block element */
+}
+
+.inputWithIcon {
+    position: relative;
+}
+
+.lockIcon {
+    opacity: 0.7;
+    font-size: 20px;
+    position: absolute;
+    right: 10px; /* Adjust as necessary */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevents clicks on the icon from focusing the input */
+}
+
+.WhatsappUpdates {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.WhatsappUpdates label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.WhatsappUpdates label input {
+    height: 16px;
+    width: 16px;
+    margin-right: 7px;
+}
+
+.WhatsappUpdates span {
+    display: flex;
+    align-items: center;
+    color: #25d366;
+    font-size: 20px;
+}
+
+.radio-container2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.radio-container2 .radio {
+    background-color: #fff;
+    border: none;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Payment Option (radio-container2) */
+.radio-container2 .checked {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.outside {
+    font-size: 12px;
+    color: #414146;
+    user-select: none;
+}
+
+.outside ol {
+    list-style-type: decimal; /* Uses numbers for list */
+    list-style-position: inside; /* Numbers appear inside the content area */
+    margin-bottom: 10px;
+}
+
+.outside li {
+    margin-bottom: 5px;
+}
+
+.outside a {
+    color: #03a9f4;
+}
+
+.outside p {
+    margin-bottom: 20px;
+}
+
+.outside ul {
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+.outside ul li {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.outside ul span {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 900px) {
+    .patient-detail-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .patient-detail-container{
+        width: 90%;
+    }
+}

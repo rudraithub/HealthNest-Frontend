@@ -104,7 +104,7 @@ const TimeSlots = () => {
     const handelTimeSlots = () => {
         ///scroll top before navigate
         window.scrollTo(0, 0);
-        navigate('/appointment')
+        navigate('/appointment/book')
     }
 
     return (
