@@ -63,7 +63,7 @@
 .doctor-details {
     display: flex;
     gap: 20px;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     padding: 10px 10px 30px 10px;
     border-bottom: 1px solid #ececec;
     color: #737382;
