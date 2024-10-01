@@ -181,12 +181,12 @@ export default function PatientDetails() {
                 <h4>Choose a payment option to Book Appointment</h4>
 
                 <div className={styles["radio-container2"]}>
-                    <label className={`${styles.radio} ${paymentOption === "payOnline" ? styles.checked : ""}`}>
+                    {/* <label className={`${styles.radio} ${paymentOption === "payOnline" ? styles.checked : ""}`}>
                         <input type="radio" value="payOnline" checked={paymentOption === "payOnline"} onChange={handlePaymentChange} />
                         <div className={styles.flex}>
                             <div>₹{payment}</div> Pay Online
                         </div>
-                    </label>
+                    </label> */}
                     <label className={`${styles.radio} ${paymentOption === "payLater" ? styles.checked : ""}`}>
                         <input type="radio" value="payLater" checked={paymentOption === "payLater"} onChange={handlePaymentChange} />
                         <div className={styles.flex}>
