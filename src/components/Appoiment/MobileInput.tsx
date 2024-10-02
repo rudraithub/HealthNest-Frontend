@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./MobileInput.module.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { appointmentAction } from "../../store/appointmentSlice";
+import { RootState } from "../../store";
 
 const MobileInput = () => {
     const [mobile, setMobile] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const {mobileNumber} = useSelector((state: RootState) => state.appointment)
+
 
     const handleMobileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setMobile(e.target.value);
@@ -14,7 +21,7 @@ const MobileInput = () => {
     const handleSubmit = (e: React.FormEvent) => {
         window.scroll(0,0)
         e.preventDefault();
-        console.log(mobile);
+        dispatch(appointmentAction.setMobileNumber(mobile))
         navigate('/appointment/otp')
     };
 
@@ -27,13 +34,19 @@ const MobileInput = () => {
         }
     };
 
+    useEffect(() => {
+        if(mobileNumber){
+            setMobile(mobileNumber)
+        }
+    }, [mobileNumber])
+
     return (
         <div className={styles["mobile-input-container"]}>
             <h2>Enter your mobile number</h2>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <label htmlFor="mobile">Mobile*</label>
                 <input
-                    type="tel"
+                    type="text"
                     id="styles.mobile"
                     maxLength={10}
                     value={mobile}

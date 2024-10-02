@@ -9,11 +9,14 @@ import ProfilePage from './pages/ProfilePage';
 import AppointmentBookPage from './pages/AppointmentPage';
 import AppointmentOtpPage from './pages/AppointmentOtpPage';
 import { AppointmentDetailsPage } from './pages/AppointmentDetailsPage';
+import ErrorPage from './pages/ErrorPage';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const Router = createBrowserRouter([
   {
     path: '/',
     element: <RootPage />,
+    errorElement: <ErrorPage />,
     children: [{
       index: true,
       element: <HomePage />
@@ -47,7 +50,11 @@ const Router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router={Router} />;
+  return (
+    <ErrorBoundary>
+      <RouterProvider router={Router} />
+    </ErrorBoundary>
+  );
 }
 
 export default App

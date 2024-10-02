@@ -4,15 +4,33 @@ import FilterBar from "./ui/FilterBar";
 import tick from "./tick.svg";
 import Doctor from "./ui/Doctor";
 import karnavati from "./karnavati-dental-care-ahmedabad-650585170c0c0.png";
+import Hemang from '../../assets/thumbnail.jpeg'
 import LocationSelector from "./LocationSelector";
 import TimeSlots from "../TimeSlots/TimeSlots";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { appointmentAction } from "../../store/appointmentSlice";
+import { RootState } from "../../store";
 
 const doctor_info = [
     {
         img: karnavati,
         name: "Karnavati Dental Care",
+        qualification: 'BDS, Fellowship in Oral Implantology, MDS - Oral Pathology & Microbiology',
+        specialist: 'Dentist, Cosmetic/Aesthetic Dentist, Implantologist, Oral Pathologist',
+        department: "Dentist",
+        experience: 99,
+        place: "bhavnagar",
+        fees: 10,
+        likes: 100,
+        stories: 100,
+    },
+    {
+        img: Hemang,
+        name: "Karnavati Dental Care",
+        qualification: 'BDS, Fellowship in Oral Implantology, MDS - Oral Pathology & Microbiology',
+        specialist: 'Dentist, Cosmetic/Aesthetic Dentist, Implantologist, Oral Pathologist',
         department: "Dentist",
         experience: 99,
         place: "bhavnagar",
@@ -23,6 +41,8 @@ const doctor_info = [
     {
         img: karnavati,
         name: "Karnavati Dental Care",
+        qualification: 'BDS, Fellowship in Oral Implantology, MDS - Oral Pathology & Microbiology',
+        specialist: 'Dentist, Cosmetic/Aesthetic Dentist, Implantologist, Oral Pathologist',
         department: "Dentist",
         experience: 99,
         place: "bhavnagar",
@@ -33,6 +53,8 @@ const doctor_info = [
     {
         img: karnavati,
         name: "Karnavati Dental Care",
+        qualification: 'BDS, Fellowship in Oral Implantology, MDS - Oral Pathology & Microbiology',
+        specialist: 'Dentist, Cosmetic/Aesthetic Dentist, Implantologist, Oral Pathologist',
         department: "Dentist",
         experience: 99,
         place: "bhavnagar",
@@ -43,16 +65,8 @@ const doctor_info = [
     {
         img: karnavati,
         name: "Karnavati Dental Care",
-        department: "Dentist",
-        experience: 99,
-        place: "bhavnagar",
-        fees: 10,
-        likes: 100,
-        stories: 100,
-    },
-    {
-        img: karnavati,
-        name: "Karnavati Dental Care",
+        qualification: 'BDS, Fellowship in Oral Implantology, MDS - Oral Pathology & Microbiology',
+        specialist: 'Dentist, Cosmetic/Aesthetic Dentist, Implantologist, Oral Pathologist',
         department: "Dentist",
         experience: 99,
         place: "bhavnagar",
@@ -66,10 +80,13 @@ export default function Doctors() {
 
     // State to track which doctor's TimeSlots are open
     const [openSlots, setOpenSlots] = useState<boolean[]>(Array(doctor_info.length).fill(false));
+    const dispatch = useDispatch()
+    const { openSlotIndex } = useSelector((state: RootState) => state.appointment);
 
     const navigate = useNavigate()
     // Toggle the TimeSlots for a specific doctor
     const handleBookClick = (index: number) => {
+        dispatch(appointmentAction.setOpenSlot(index))
         setOpenSlots((prev) => {
             // Create a new array, with the toggled value for the clicked doctor
             const updatedSlots = [...prev];
@@ -81,6 +98,17 @@ export default function Doctors() {
     const handleProfileView = () => {
         navigate('/profile')
     }
+
+        // On component mount, open the slots of the selected doctor
+        useEffect(() => {
+            if (openSlotIndex !== -1) {
+                setOpenSlots((prev) => {
+                    const updatedSlots = [...prev];
+                    updatedSlots[openSlotIndex] = true; // Open the selected doctor's slots
+                    return updatedSlots;
+                });
+            }
+        }, [openSlotIndex])
 
     return (
         <div className={styles.doctors}>
@@ -119,7 +147,7 @@ export default function Doctors() {
                                 />
                                 {openSlots[index] && (
                                     <div className={styles.timeSlotsWrapper}>
-                                        <TimeSlots />
+                                        <TimeSlots doctor={doctor}/>
                                     </div>
                                 )}
                             </div>

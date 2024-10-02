@@ -3,11 +3,10 @@ import styles from "./PatientDetails.module.css";
 import {CiLock} from "react-icons/ci";
 import {IoLogoWhatsapp} from "react-icons/io";
 import {MdDone} from "react-icons/md";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 export default function PatientDetails() {
-    const country_code = 91;
-    const mobile = 7777777777;
-    const payment = 7;
 
     // State for appointment option, payment option, form fields, and errors
     const [appointmentOption, setAppointmentOption] = useState("myself");
@@ -18,6 +17,8 @@ export default function PatientDetails() {
     const [patientMobile, setPatientMobile] = useState(""); // Patient's Mobile field
     const [patientMobileError, setPatientMobileError] = useState(""); // Error state for patient's mobile
     const [paymentError, setPaymentError] = useState(""); // State for payment error
+
+    const {mobileNumber, selectedDoctor} = useSelector((state: RootState) => state.appointment)
 
     const handleAppointmentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setAppointmentOption(e.target.value);
@@ -107,7 +108,7 @@ export default function PatientDetails() {
                             </label>
                             <div className={styles.inputWithIcon}>
                                 <CiLock className={styles.lockIcon} />
-                                <input type="tel" id="mobile" className={styles.noHover} value={`+${country_code} ${mobile}`} disabled />
+                                <input type="tel" id="mobile" className={styles.noHover} value={`${mobileNumber}`} disabled />
                             </div>
                         </div>
 
@@ -142,7 +143,7 @@ export default function PatientDetails() {
                             </label>
                             <div className={styles.inputWithIcon}>
                                 <CiLock className={styles.lockIcon} />
-                                <input type="tel" id="mobile" className={styles.noHover} value={`+${country_code} ${mobile}`} disabled />
+                                <input type="tel" id="mobile" className={styles.noHover} value={`${mobileNumber}`} disabled />
                             </div>
                         </div>
 
@@ -174,7 +175,7 @@ export default function PatientDetails() {
                         <span>
                             <IoLogoWhatsapp />
                         </span>
-                        Get updates on WhatsApp number +{country_code} {mobile}
+                        Get updates on WhatsApp number {mobileNumber}
                     </label>
                 </div>
 
@@ -190,7 +191,7 @@ export default function PatientDetails() {
                     <label className={`${styles.radio} ${paymentOption === "payLater" ? styles.checked : ""}`}>
                         <input type="radio" value="payLater" checked={paymentOption === "payLater"} onChange={handlePaymentChange} />
                         <div className={styles.flex}>
-                            <div>₹{payment}</div> Pay Later at the Clinic
+                            <div>₹{selectedDoctor?.fees}</div> Pay Later at the Clinic
                         </div>
                     </label>
                     {paymentError && <span className={styles["error-message"]}>{paymentError}</span>}
@@ -212,7 +213,7 @@ export default function PatientDetails() {
                             no-show.
                         </li>
                         <li>
-                            Updates will be sent to +{country_code} {mobile}
+                            Updates will be sent to {mobileNumber}
                         </li>
                     </ol>
                 )}
@@ -220,7 +221,7 @@ export default function PatientDetails() {
                 {paymentOption === "payLater" && (
                     <ol>
                         <li>
-                            Updates will be sent to +{country_code} {mobile}
+                            Updates will be sent to {mobileNumber}
                         </li>
                     </ol>
                 )}

@@ -3,8 +3,13 @@ import styles from "./AppointmentInfo.module.css";
 import doctorImg from "../../assets/thumbnail.jpeg";
 import hospitalImg from "../../assets/dr-hemang-zala-multi-speciality-cosmetic-dental-hospital-ahmedabad-1441969518-55f2b56ebd965.webp";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 const AppointmentInfo = () => {
+
+    const {selectedDoctor, selectedDate, selectedTime} = useSelector((state: RootState) => state.appointment)
+
     return (
         <div className={styles["appointment-info"]}>
             <div className={styles["appointment-header"]}>
@@ -15,12 +20,12 @@ const AppointmentInfo = () => {
                     <div className={styles.appointmentDateTime}>
                         <div>
                             <p>
-                                <span className={styles["icon"]}>📅</span> On Sep 28, 2024
+                                <span className={styles["icon"]}>📅</span> On {selectedDate}
                             </p>
                         </div>
                         <div>
                             <p>
-                                <span className={styles["icon"]}>⏰</span> At 6:30 PM
+                                <span className={styles["icon"]}>⏰</span> At {selectedTime}
                             </p>
                         </div>
                     </div>
@@ -29,11 +34,11 @@ const AppointmentInfo = () => {
             </div>
             <div className={styles["doctor-info"]}>
                 <div className={styles["doctor-details"]}>
-                    <img src={doctorImg} alt="Doctor" className={styles["doctor-img"]} />
+                    <img src={selectedDoctor.img || doctorImg} alt="Doctor" className={styles["doctor-img"]} />
                     <div className={styles.doctorData}>
-                        <h3>Dr. Hemang Zala</h3>
-                        <p>BDS, Fellowship in Oral Implantology, MDS - Oral Pathology & Microbiology</p>
-                        <p>Specialties: Dentist, Cosmetic/Aesthetic Dentist, Implantologist, Oral Pathologist</p>
+                        <h3>{selectedDoctor?.name || 'Dr. Hemang Zala'}</h3>
+                        <p>{selectedDoctor?.qualification || 'BDS, Fellowship in Oral Implantology, MDS - Oral Pathology & Microbiology'}</p>
+                        <p>{selectedDoctor?.specialist}</p>
                     </div>
                 </div>
                 <div className={styles["clinic-info"]}>

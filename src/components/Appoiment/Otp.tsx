@@ -2,11 +2,14 @@ import { useNavigate } from "react-router-dom";
 import styles from "./otp.module.css";
 import { BsPencilSquare } from "react-icons/bs";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 export default function Otp() {
     const [otp, setOtp] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate()
+    const {mobileNumber} = useSelector((state: RootState) => state.appointment)
 
     const handleOtpChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setOtp(e.target.value);
@@ -40,10 +43,10 @@ export default function Otp() {
                     </div>
                     <div className={styles["row_2"]}>
                         <div className={styles["number"]}>
-                            <h3>+919724430285</h3>
+                            <h3>{mobileNumber}</h3>
                         </div>
                         <div className={styles["icon"]}>
-                            <BsPencilSquare />
+                            <BsPencilSquare onClick={() =>  navigate('/appointment/book')} />
                         </div>
                     </div>
                     <div className={styles["otp"]}>
