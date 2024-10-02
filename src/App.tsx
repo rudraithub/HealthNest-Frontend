@@ -5,12 +5,18 @@ import RootPage from './pages/RootPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/Register';
 import DoctorsPage from './pages/DoctorsP';
-import AppointmentPage from './pages/AppointmentPage';
+import ProfilePage from './pages/ProfilePage';
+import AppointmentBookPage from './pages/AppointmentPage';
+import AppointmentOtpPage from './pages/AppointmentOtpPage';
+import { AppointmentDetailsPage } from './pages/AppointmentDetailsPage';
+import ErrorPage from './pages/ErrorPage';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const Router = createBrowserRouter([
   {
     path: '/',
     element: <RootPage />,
+    errorElement: <ErrorPage />,
     children: [{
       index: true,
       element: <HomePage />
@@ -25,14 +31,30 @@ const Router = createBrowserRouter([
       element: <DoctorsPage />,
     },{
       path: 'appointment',
-      element: <AppointmentPage />
+      children: [{
+        path: 'book',
+        element: <AppointmentBookPage />
+      },{
+        path: 'otp',
+        element: <AppointmentOtpPage />
+      },{
+        path: 'patientDetails',
+        element: <AppointmentDetailsPage />
+      }],
+    },{
+      path: 'profile',
+      element: <ProfilePage />
     }
     ]
   }
 ])
 
 function App() {
-  return <RouterProvider router={Router} />;
+  return (
+    <ErrorBoundary>
+      <RouterProvider router={Router} />
+    </ErrorBoundary>
+  );
 }
 
 export default App

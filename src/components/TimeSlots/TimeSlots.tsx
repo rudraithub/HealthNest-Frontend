@@ -4,9 +4,13 @@ import { WiSunrise } from "react-icons/wi";
 import { IoSunnyOutline } from "react-icons/io5";
 import { IoMoonOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { appointmentAction } from '../../store/appointmentSlice';
 
-
-const TimeSlots = () => {
+interface props {
+    doctor?: object | null
+}
+const TimeSlots:React.FC<props> = ({doctor}) => {
 
     const dateAndTimeSlot = [
         {
@@ -64,8 +68,6 @@ const TimeSlots = () => {
         }
     ]
 
-    const navigate = useNavigate()
-
     const [visibleDataIndex, setVisibleDataIndex] = useState(0); // Controls the starting index of the slice
     const [selectedIndex, setSelectedIndex] = useState(0); // Controls the selected date within the current slice
 
@@ -73,6 +75,10 @@ const TimeSlots = () => {
 
     // Get the slice of dates based on visibleDataIndex
     const sliceData = dateAndTimeSlot.slice(visibleDataIndex, visibleDataIndex + showDataCount);
+
+    const navigate = useNavigate()
+
+    const dispatch = useDispatch()
 
     const handleNext = () => {
         if (selectedIndex < showDataCount - 1 && selectedIndex < sliceData.length - 1) {
@@ -101,10 +107,15 @@ const TimeSlots = () => {
         setSelectedIndex(index);
     }
 
-    const handelTimeSlots = () => {
+    const handelTimeSlots = (item: string) => {
         ///scroll top before navigate
         window.scrollTo(0, 0);
-        navigate('/appointment')
+
+        dispatch(appointmentAction.setSelectedDoctor(doctor))
+        dispatch(appointmentAction.setSelectedDate(dateAndTimeSlot[selectedIndex].date))
+        dispatch(appointmentAction.setSelectedTime(item))
+
+        navigate('/appointment/book')
     }
 
     return (
@@ -132,7 +143,7 @@ const TimeSlots = () => {
                     </div>
                     <div className={styles.timeSlots}>
                         {sliceData[selectedIndex].slots.Morning.map((item, index) => (
-                            <button key={index} onClick={handelTimeSlots}>{item}</button>
+                            <button key={index} onClick={() => handelTimeSlots(item)}>{item}</button>
                         ))}
                     </div>
                 </div>
@@ -143,7 +154,7 @@ const TimeSlots = () => {
                     </div>
                     <div className={styles.timeSlots}>
                         {sliceData[selectedIndex].slots.Evening.map((item, index) => (
-                            <button key={index} onClick={handelTimeSlots}>{item}</button>
+                            <button key={index} onClick={() => handelTimeSlots(item)}>{item}</button>
 
                         ))}
                     </div>
@@ -155,7 +166,7 @@ const TimeSlots = () => {
                     </div>
                     <div className={styles.timeSlots}>
                         {sliceData[selectedIndex].slots.Night.map((item, index) => (
-                            <button key={index} onClick={handelTimeSlots}>{item}</button>
+                            <button key={index} onClick={() => handelTimeSlots(item)}>{item}</button>
                         ))}
                     </div>
                 </div>
