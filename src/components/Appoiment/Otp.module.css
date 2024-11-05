@@ -1,0 +1,107 @@
+.otpContainer {
+    width: 25%;
+    background-color: white;
+    padding: 15px;font-size: 14px;
+}
+.row_1 h4 {
+    font-weight: bold;
+    color: #414146 !important;
+    padding-bottom: 15px;
+}
+.row_2  {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    padding-bottom: 25px;
+}
+.number h3{
+    font-weight: bold;
+    font-size: 16px;
+    color: #414146;
+    margin-right: 20px;
+}
+#phone_number {
+    width: 100%;
+    padding: 6px 0 2px 6px;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 1px solid #e0e0e4;
+    font-size: 14px;
+    font-weight: bold;
+}
+.get_via_call h5{
+    color: #787887;
+}
+.get_via_call {
+    display: flex;
+}
+.get_via_call a h5{
+    color: #14bef0 ;
+}
+.resend_OTP a{
+    color: #14bef0;
+}
+.received{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 10px;
+    font-size: 16px;
+}
+.booking{
+    /* border: 1px solid #14bef0; */
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: #14bef0;
+    color: #fff;
+    width: 100%;
+    height: 45px;
+    font-family: 'Lato';
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-radius: 3px;
+    line-height: 24px;
+}
+
+/* In App.css or ContactForm.module.css */
+.placeholder::placeholder {
+    color: #78788785;
+}
+
+.otp h5{
+    color: #787887;
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+
+.button{
+    padding-top: 40px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .otpContainer {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .otpContainer {
+        width: 80%;
+    }
+
+    .received{
+        display: flex;
+        flex-direction: column;
+    }
+}

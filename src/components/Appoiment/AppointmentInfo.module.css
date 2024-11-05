@@ -1,0 +1,113 @@
+.appointment-info {
+    width: calc(35% + 40px);
+    background-color: #fff;
+    height: fit-content;
+    padding: 20px 0;
+    border-radius: 5px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.appointmentTitle {
+    padding: 10px;
+    border-bottom: 1px solid #ececec;
+}
+
+.appointmentTitle h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.appointment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ececec;
+}
+
+.appointment-details p {
+    font-size: 1rem;
+}
+
+.appointment-details a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.appointmentDateTime {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.appointmentDateTime p {
+    font-size: 0.8rem;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.doctor-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.doctor-details {
+    display: flex;
+    gap: 20px;
+    /* justify-content: space-evenly; */
+    padding: 10px 10px 30px 10px;
+    border-bottom: 1px solid #ececec;
+    color: #737382;
+}
+
+.doctor-details h3 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.doctor-details p {
+    font-size: 0.9rem;
+}
+
+.clinic-info {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    color: #737382;
+}
+
+.clinic-info p {
+    font-size: 0.9rem;
+}
+
+.clinic-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 900px) {
+    .appointment-info {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .appointment-info {
+        width: 90%;
+    }
+
+    .doctor-details,
+    .clinic-info {
+        display: flex;
+        flex-direction: column;
+    }
+}

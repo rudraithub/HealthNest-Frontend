@@ -34,7 +34,6 @@ const Modal: React.FC<ModalProps> = ({ children, open, onClose }) => {
 
     if (!modalRoot) return null; // Ensure modalRoot is not null
 
-
     return createPortal(
         <div>
             <dialog

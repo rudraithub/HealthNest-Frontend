@@ -10,11 +10,13 @@ interface DoctorProps {
     fees: number;
     likes: number;
     stories: number;
-    onBookClick: ()=> void
+    onBookClick?: ()=> void,
+    onProfileView?: () => void
 }
 
 
-export default function Doctor({ img, name, department, experience, place, fees, likes, stories, onBookClick }: DoctorProps) {
+export default function Doctor({ img, name, department, experience, place, fees, likes, stories, onBookClick, onProfileView }: DoctorProps) {
+
     return (
         <div className={styles.Doctor}>
             <div className={styles.left_doctors}>
@@ -40,7 +42,7 @@ export default function Doctor({ img, name, department, experience, place, fees,
                 </div>
             </div>
             <div className={styles.buttons}>
-                <button>View Profile</button>
+                <button onClick={onProfileView}>View Profile</button>
                 <button onClick={onBookClick}>Book Clinic Visit</button>
             </div>
         </div>

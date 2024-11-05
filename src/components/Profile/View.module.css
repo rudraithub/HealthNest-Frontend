@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f5;
+}
+
+.profileContainer {
+  margin: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: 'Lato';
+}
+
+
+.profileHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.profileImage {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px 0px 15px;
+}
+
+.profileVerification {
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileInfo h1 {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin: 0;
+  font-size: 24px;
+  color: #414146;
+}
+
+.profileInfo h2 {
+  display: flex;
+  margin-bottom: 3px;
+  margin-top: 4px;
+  color: #414146;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+h1 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #737382;
+  font-weight: 700 !important;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Lato';
+}
+
+h1 a:hover {
+  text-decoration: underline;
+}
+
+.profileInfo p {
+  margin: 0px;
+  color: #414146;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.pera {
+  display: flex;
+  flex-direction: column;
+}
+
+.verified {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.rating h3 {
+  display: flex;
+  flex-direction: row;
+  color: #414146;
+  font-size: 13px;
+  font-family: 'Lato';
+  /* line-height: 0%; */
+}
+
+.rating h4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #01a400;
+  font-size: 16px;
+  font-family: 'Lato';
+  /* line-height: 0%; */
+  gap: 2px;
+}
+
+h4 span {
+  color: #737382;
+  font-size: 12px;
+  font-family: 'Lato';
+  display: flex;
+}
+
+.profileDescription {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.profileDescription p {
+  color: #414146;
+  vertical-align: baseline;
+  font-size: 14px;
+  font-family: 'Lato';
+  line-height: 20px;
+}
+
+.profileFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.shareStoryLink {
+  color: #199FD9;
+  font-size: 14px;
+  font-family: 'Lato';
+}
+
+
+@media (max-width: 500px) {
+  .profileContainer {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .profileHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profileImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profileInfo h1 {
+    font-size: 18px;
+  }
+
+  .profileInfo p {
+    font-size: 12px;
+  }
+
+  .rating h3,
+  .rating h4 {
+    font-size: 12px;
+  }
+
+  .shareStoryLink {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  .profileContainer {
+    width: 80%;
+    flex-direction: row;
+  }
+
+  .profileImage {
+    width: 80px;
+    height: 80px;
+  }
+
+
+  
+  .profileInfo h1 {
+    font-size: 20px;
+  }
+
+  .profileInfo p {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .profileContainer {
+    width: 70%;
+  }
+
+  .profileImage {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profileInfo h1 {
+    font-size: 22px;
+  }
+
+  .profileInfo p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .profileContainer {
+    width: 50%;
+  }
+
+  .profileImage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profileInfo h1 {
+    font-size: 24px;
+  }
+
+  .profileInfo p {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+/* logo */
+
+.banner {
+  display: flex;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e0e0e0;
+  color: #e0e0e0;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top: 10px;
+  gap: 5px;
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato';
+}
+
+span i{
+  color: #00b6ee;
+  /* font-size: 10px; */
+}
+
+.practo {
+  font-size: 15px;
+  color:#293788;
+  font-weight: bold;
+}
+
+.dental {
+  color: #199fd9;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.slogan {
+  font-size: 15px;
+  font-family: 'Lato';
+  color:#28328c;
+}

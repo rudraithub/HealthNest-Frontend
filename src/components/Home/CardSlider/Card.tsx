@@ -11,8 +11,12 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ cardImg, cardTitle, description }) => {
   const navigate = useNavigate()
+  const handelNavigate = () => {
+    window.scroll(0,0)
+    navigate('/doctors')
+  }
   return (
-    <div className={styles.card} onClick={()=> navigate('/doctors')}>
+    <div className={styles.card} onClick={handelNavigate}>
       <div className={styles.cardImg}>
         <img src={cardImg} alt={cardTitle} />
       </div>

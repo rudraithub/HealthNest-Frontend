@@ -1,6 +1,12 @@
 import { useRef, useState } from 'react'
 import Card from './Card'
 import dentistImg from '../../../assets/sp-dentist@2x.jpg'
+import gynecologistImg from '../../../assets/sp-gynecologist@2x.jpg'
+import  pediatricianImg from '../../../assets/sp-physiotherapist@2x.jpg'
+import dietitian from '../../../assets/sp-dietitian@2x.jpg'
+import surgeon from  '../../../assets/sp-general-surgeon@2x.jpg'
+import orthopedic from '../../../assets/sp-orthopedist@2x.jpg'
+
 import styles from './CardSlider.module.css'
 
 const cardList = [
@@ -10,44 +16,29 @@ const cardList = [
         description: 'Teething troubles? Schedule a dental checkup'
     },
     {
-        img: dentistImg,
-        title: 'Dentist',
-        description: 'Teething troubles? Schedule a dental checkup'
+        img: gynecologistImg,
+        title: 'Gynecologist/Obstetrician',
+        description: 'Explore for women’s health, pregnancy and infertility treatments'
     },
     {
-        img: dentistImg,
-        title: 'Dentist',
-        description: 'Teething troubles? Schedule a dental checkup'
+        img: dietitian,
+        title: 'Dietitian/Nutrition',
+        description: 'Get guidance on eating right, weight management and sports nutrition'
     },
     {
-        img: dentistImg,
-        title: 'Dentist',
-        description: 'Teething troubles? Schedule a dental checkup'
+        img: surgeon,
+        title: 'General surgeon',
+        description: 'Need to get operated? Find the right surgeon'
     },
     {
-        img: dentistImg,
-        title: 'Dentist',
-        description: 'Teething troubles? Schedule a dental checkup'
+        img: orthopedic,
+        title: 'Orthopedist',
+        description: 'For Bone and Joints issues, spinal injuries and more'
     },
     {
-        img: dentistImg,
-        title: 'Dentist',
-        description: 'Teething troubles? Schedule a dental checkup'
-    },
-    {
-        img: dentistImg,
-        title: 'Dentist',
-        description: 'Teething troubles? Schedule a dental checkup'
-    },
-    {
-        img: dentistImg,
-        title: 'Dentist',
-        description: 'Teething troubles? Schedule a dental checkup'
-    },
-    {
-        img: dentistImg,
-        title: 'Dentist',
-        description: 'Teething troubles? Schedule a dental checkup'
+        img: pediatricianImg,
+        title: 'Physiotherapist',
+        description: 'Pulled a muscle? Get it treated by a trained physiotherapist'
     }
 ]
 
@@ -56,7 +47,7 @@ function CardSlider() {
     const scrollRef = useRef(null);
     console.log(scrollRef)
 
-    const cardWidth = 300; 
+    const cardWidth = 400; 
     const scrollAmount = cardWidth; 
   
     const scrollLeft = () => {
